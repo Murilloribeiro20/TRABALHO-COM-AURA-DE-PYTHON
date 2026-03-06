@@ -1,0 +1,5 @@
+lista = [1, 2, 3, 4]
+t = len(lista)
+t = 4 
+for i in range(0, 4, 1):
+    print(lista[i])
