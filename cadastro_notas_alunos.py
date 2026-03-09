@@ -39,6 +39,6 @@ while True:
 
         print("\nAluno:", aluno[0])
         print("Notas:", aluno[1], aluno[2], aluno[3])
-        print("Média:", round(aluno[4], 2))
+        print("Média:", round(aluno[4], 2))         #arredondar a media
         print("Situação:", aluno[5])
       
