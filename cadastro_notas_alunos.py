@@ -1,3 +1,28 @@
+def calcula_media(nota1, nota2, nota3): 
+    media = (nota1 + nota2 + nota3) / 3
+    return media
+
+def digitar_nota():
+    for n in range(3):
+            while True:
+                nota = float(input(f"Digite a nota {n + 1}: "))
+                if nota < 0 or nota > 10:
+                    print("Digite uma nota válida entre 0 e 10.")
+                else:
+                    notas.append(nota)
+                    break
+    return notas
+
+def calcula_situaçao(media):
+    if media >= 7:
+            situacao = "Aprovado"
+    elif media >= 5:
+            situacao = "Recuperação"
+    else:
+            situacao = "Reprovado"
+    return situacao
+
+
 alunos = []
 
 while True:
@@ -12,24 +37,14 @@ while True:
  
         nome = input("Digite o nome dos alunos: ")
         notas = []
+        
+        notas = digitar_nota()
 
-        for n in range(3):
-            while True:
-                nota = float(input(f"Digite a nota {n + 1}: "))
-                if nota < 0 or nota > 10:
-                    print("Digite uma nota válida entre 0 e 10.")
-                else:
-                    notas.append(nota)
-                    break
+        media = calcula_media(notas[0], notas[1], notas[2])
 
-        media = (notas[0] + notas[1] + notas[2]) / 3
+        situacao = calcula_situaçao(media)
 
-        if media >= 7:
-            situacao = "Aprovado"
-        elif media >= 5:
-            situacao = "Recuperação"
-        else:
-            situacao = "Reprovado"
+        
 
         alunos.append([nome, notas[0], notas[1], notas[2], media, situacao])
 
